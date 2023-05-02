@@ -5,7 +5,7 @@ import { Post } from "../data";
 
 type Group<T extends string> = `(${T})`;
 
-type SharedSegment = Group<"index"> | Group<"search"> | Group<"[profile]">;
+type SharedSegment = Group<"index"> | Group<"search"> | Group<"profile">;
 
 export function Tweet({ item }: { item: Post }) {
   const [segment] = useSegments() as [SharedSegment];

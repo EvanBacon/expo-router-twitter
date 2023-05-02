@@ -2,8 +2,7 @@
   "expo": {
     "scheme": "acme",
     "web": {
-      "bundler": "metro",
-      "output": "static"
+      "bundler": "metro"
     },
     "name": "twitter",
     "slug": "twitter",

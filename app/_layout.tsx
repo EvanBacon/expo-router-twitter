@@ -2,8 +2,15 @@ import { Tabs } from "expo-router";
 import { Icon, IconName } from "../components/icon";
 
 function makeIcon(icon: IconName, activeIcon: IconName) {
-  return function (props) {
-    return <Icon name={props.focused ? activeIcon : icon} fill={props.color} />;
+  return function (props: { size: number; color: string; focused: boolean }) {
+    return (
+      <Icon
+        width={props.size}
+        height={props.size}
+        name={props.focused ? activeIcon : icon}
+        fill={props.color}
+      />
+    );
   };
 }
 
@@ -31,11 +38,11 @@ export default function RootLayout() {
         }}
       />
       <Tabs.Screen
-        name="([profile])"
+        name="(profile)"
         initialParams={{ profile: "baconbrix" }}
         options={{
           title: "Profile",
-          href: "/([profile])/baconbrix",
+          href: "/(profile)/baconbrix",
           tabBarIcon: makeIcon("profile", "profile-active"),
         }}
       />
