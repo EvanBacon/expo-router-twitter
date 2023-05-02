@@ -2,7 +2,7 @@ import { Stack } from "expo-router";
 
 export const unstable_settings = {
   profile: {
-    initialRouteName: "[profile]",
+    initialRouteName: "profile",
   },
 };
 

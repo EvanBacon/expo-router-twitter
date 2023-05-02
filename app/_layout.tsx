@@ -39,10 +39,8 @@ export default function RootLayout() {
       />
       <Tabs.Screen
         name="(profile)"
-        initialParams={{ profile: "baconbrix" }}
         options={{
           title: "Profile",
-          href: "/(profile)/baconbrix",
           tabBarIcon: makeIcon("profile", "profile-active"),
         }}
       />

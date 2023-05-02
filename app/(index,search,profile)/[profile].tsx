@@ -1,16 +1,16 @@
-import {
-  Link,
-  Stack,
-  useLocalSearchParams,
-  useSearchParams,
-} from "expo-router";
+import { Link, Stack, useLocalSearchParams } from "expo-router";
 import { Image, Text, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
+
 import { Feed } from "../../components/feed";
 import { posts, users } from "../../data";
 
 export default function Profile() {
   const { profile } = useLocalSearchParams<{ profile: string }>();
+  return <ProfileScreen profile={profile} />;
+}
+
+export function ProfileScreen({ profile }: { profile: string }) {
   const user = users.find((user) => user.user === profile);
 
   if (!user) {
