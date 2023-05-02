@@ -21,7 +21,7 @@ export const users = [
     name: "Lydia Hallie",
     image: "/users/theavocoder.jpeg",
     bio: "Full-stack JavaScript developer, writer, and public speaker. Sharing my knowledge and love for coding with the world.",
-    url: "https://lydiahallie.dev/",
+    url: "https://lydiahallie.com/",
     followers: 31759,
   },
   {
