@@ -21,6 +21,10 @@
     ],
     "ios": {
       "bundleIdentifier": "com.evanbacon.twitter",
+      "infoPlist": {
+        "CoreSpotlightContinuation": true,
+        "NSUserActivityTypes": ["$(PRODUCT_BUNDLE_IDENTIFIER).expo.index_route"]
+      },
       "associatedDomains": [
         "applinks:expo-twitter.netlify.app",
         "webcredentials:expo-twitter.netlify.app",

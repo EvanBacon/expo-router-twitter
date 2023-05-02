@@ -1,4 +1,5 @@
 import { Stack, useLocalSearchParams } from "expo-router";
+import Head from "expo-router/head";
 import { Text } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 
@@ -24,6 +25,11 @@ export default function Post() {
 
   return (
     <>
+      <Head>
+        <title>{post.user.name} | Post | Expo Twitter</title>
+        <meta name="og:description" content={post.post} />
+        <meta name="og:image" content={post.user.image} />
+      </Head>
       <Stack.Screen options={{ title: "Tweet" }} />
       <ScrollView contentInsetAdjustmentBehavior="automatic">
         <Tweet item={post} />

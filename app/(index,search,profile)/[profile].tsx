@@ -1,4 +1,5 @@
 import { Link, Stack, useLocalSearchParams } from "expo-router";
+import Head from "expo-router/head";
 import { Image, Text, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 
@@ -27,6 +28,11 @@ export function ProfileScreen({ profile }: { profile: string }) {
 
   return (
     <>
+      <Head>
+        <title>{user.name} | Profile | Expo Twitter</title>
+        <meta name="og:description" content={user.bio} />
+        <meta name="og:image" content={user.image} />
+      </Head>
       <Stack.Screen options={{ title: "Profile" }} />
 
       <Feed

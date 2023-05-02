@@ -26,6 +26,7 @@ export default function RootLayout() {
         />
         <meta property="og:image" content="/og-image.jpg" />
         <meta property="expo:handoff" content="true" />
+        <meta property="expo:spotlight" content="true" />
       </Head>
 
       <Tabs
