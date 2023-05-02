@@ -1,9 +1,13 @@
-import { Stack, useLocalSearchParams, useSearchParams } from "expo-router";
+import { Stack, useLocalSearchParams } from "expo-router";
 import { Text } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 
 import { Tweet } from "../../../components/tweet";
 import { posts } from "../../../data";
+
+export async function generateStaticParams() {
+  return posts.map(({ id }) => ({ post: String(id) }));
+}
 
 export default function Post() {
   const { post: id } = useLocalSearchParams<{ post: string }>();

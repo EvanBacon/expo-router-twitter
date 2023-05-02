@@ -2,12 +2,21 @@
   "expo": {
     "scheme": "acme",
     "web": {
-      "bundler": "metro"
+      "bundler": "metro",
+      "output": "static"
     },
     "name": "twitter",
     "slug": "twitter",
     "experiments": {
       "tsconfigPaths": true
-    }
+    },
+    "plugins": [
+      [
+        "expo-router",
+        {
+          "origin": "https://expo-twitter.netlify.app"
+        }
+      ]
+    ]
   }
 }

@@ -1,9 +1,4 @@
-import {
-  Stack,
-  useLocalSearchParams,
-  useRouter,
-  useSearchParams,
-} from "expo-router";
+import { Stack, useLocalSearchParams, useRouter } from "expo-router";
 
 import { Feed } from "../../components/feed";
 import { posts } from "../../data";

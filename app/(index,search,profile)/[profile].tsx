@@ -5,6 +5,10 @@ import { ScrollView } from "react-native-gesture-handler";
 import { Feed } from "../../components/feed";
 import { posts, users } from "../../data";
 
+export async function generateStaticParams() {
+  return users.map(({ user }) => ({ profile: user }));
+}
+
 export default function Profile() {
   const { profile } = useLocalSearchParams<{ profile: string }>();
   return <ProfileScreen profile={profile} />;
