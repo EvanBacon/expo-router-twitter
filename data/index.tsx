@@ -118,4 +118,8 @@ export const posts = [
     post: "Get started with Expo Push Notifications using our step-by-step guide.",
   },
   // More posts can be added here
-].map((v, id) => ({ ...v, id, user: users.find((u) => u.user === v.user) }));
+].map((v, id) => ({
+  ...v,
+  id,
+  user: users.find((u) => u.user === v.user),
+})) as unknown as Post[];

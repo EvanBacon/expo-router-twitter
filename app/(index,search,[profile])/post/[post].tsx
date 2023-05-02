@@ -1,7 +1,9 @@
 import { Stack, useSearchParams } from "expo-router";
 import { Text } from "react-native";
+
 import { Tweet } from "../../../components/tweet";
 import { posts } from "../../../data";
+
 export default function Post() {
   const { post: id } = useSearchParams<{ post: string }>();
 

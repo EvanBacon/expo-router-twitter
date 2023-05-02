@@ -3,8 +3,12 @@ import { Image, Pressable, Text, View } from "react-native";
 
 import { Post } from "../data";
 
+type Group<T extends string> = `(${T})`;
+
+type SharedSegment = Group<"index"> | Group<"search"> | Group<"[profile]">;
+
 export function Tweet({ item }: { item: Post }) {
-  const [segment] = useSegments();
+  const [segment] = useSegments() as [SharedSegment];
   return (
     <Link href={`/${segment}/post/${item.id}`} asChild>
       <Pressable>

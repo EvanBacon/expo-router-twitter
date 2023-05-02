@@ -1,5 +1,11 @@
 import { Tabs } from "expo-router";
-import { Icon } from "../components/icon";
+import { Icon, IconName } from "../components/icon";
+
+function makeIcon(icon: IconName, activeIcon: IconName) {
+  return function (props) {
+    return <Icon name={props.focused ? activeIcon : icon} fill={props.color} />;
+  };
+}
 
 export default function RootLayout() {
   return (
@@ -14,28 +20,14 @@ export default function RootLayout() {
         name="(index)"
         options={{
           title: "Home",
-          tabBarIcon(props) {
-            return (
-              <Icon
-                name={props.focused ? "home-active" : "home"}
-                fill={props.color}
-              />
-            );
-          },
+          tabBarIcon: makeIcon("home", "home-active"),
         }}
       />
       <Tabs.Screen
         name="(search)"
         options={{
           title: "Search",
-          tabBarIcon(props) {
-            return (
-              <Icon
-                name={props.focused ? "explore-active" : "explore"}
-                fill={props.color}
-              />
-            );
-          },
+          tabBarIcon: makeIcon("explore", "explore-active"),
         }}
       />
       <Tabs.Screen
@@ -44,14 +36,7 @@ export default function RootLayout() {
         options={{
           title: "Profile",
           href: "/([profile])/baconbrix",
-          tabBarIcon(props) {
-            return (
-              <Icon
-                name={props.focused ? "profile-active" : "profile"}
-                fill={props.color}
-              />
-            );
-          },
+          tabBarIcon: makeIcon("profile", "profile-active"),
         }}
       />
     </Tabs>

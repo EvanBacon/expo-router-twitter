@@ -1,5 +1,6 @@
-import { Link, Stack } from "expo-router";
-import { FlatList, Image, Pressable, Text, View } from "react-native";
+import { Stack } from "expo-router";
+import { View } from "react-native";
+
 import { Feed } from "../../components/feed";
 import { posts } from "../../data";
 
