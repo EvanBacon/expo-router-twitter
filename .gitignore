@@ -23,3 +23,6 @@ expo-env.d.ts
 # @end expo-cli
 # Local Netlify folder
 .netlify
+
+ios/
+android/

@@ -1,6 +1,7 @@
 {
   "expo": {
-    "scheme": "acme",
+    "scheme": "expo-twitter",
+    "icon": "./assets/app-icon.png",
     "web": {
       "bundler": "metro",
       "output": "static"
@@ -17,6 +18,14 @@
           "origin": "https://expo-twitter.netlify.app"
         }
       ]
-    ]
+    ],
+    "ios": {
+      "bundleIdentifier": "app.bacon.twitter",
+      "associatedDomains": [
+        "applinks:expo-twitter.netlify.app",
+        "webcredentials:expo-twitter.netlify.app",
+        "activitycontinuation:expo-twitter.netlify.app"
+      ]
+    }
   }
 }
