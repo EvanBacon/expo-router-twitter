@@ -6,6 +6,8 @@ export type IconName =
   | "logo"
   | "logo-small"
   | "more"
+  | "profile-active"
+  | "profile"
   | "explore-active"
   | "explore"
   | "home-active"

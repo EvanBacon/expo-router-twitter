@@ -6,6 +6,8 @@ export default function RootLayout() {
     <Tabs
       screenOptions={{
         headerShown: false,
+        tabBarShowLabel: false,
+        tabBarActiveTintColor: "rgb(29, 155, 240)",
       }}
     >
       <Tabs.Screen
@@ -38,13 +40,14 @@ export default function RootLayout() {
       />
       <Tabs.Screen
         name="([profile])"
+        initialParams={{ profile: "baconbrix" }}
         options={{
           title: "Profile",
           href: "/([profile])/baconbrix",
           tabBarIcon(props) {
             return (
               <Icon
-                name={props.focused ? "messages-active" : "messages"}
+                name={props.focused ? "profile-active" : "profile"}
                 fill={props.color}
               />
             );
