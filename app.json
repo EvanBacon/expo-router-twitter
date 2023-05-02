@@ -20,7 +20,7 @@
       ]
     ],
     "ios": {
-      "bundleIdentifier": "app.bacon.twitter",
+      "bundleIdentifier": "com.evanbacon.twitter",
       "associatedDomains": [
         "applinks:expo-twitter.netlify.app",
         "webcredentials:expo-twitter.netlify.app",
