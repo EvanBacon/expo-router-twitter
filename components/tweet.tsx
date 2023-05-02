@@ -12,33 +12,53 @@ export function Tweet({ item }: { item: Post }) {
   return (
     <Link href={`/${segment}/post/${item.id}`} asChild>
       <Pressable>
-        <View
-          style={{
-            flexDirection: "row",
-            padding: 16,
-            gap: 16,
-            borderBottomColor: "#ccc",
-            borderBottomWidth: 1,
-          }}
-        >
-          <Image
-            source={{ uri: item.user.image }}
-            style={{
-              width: 48,
-              height: 48,
-              borderRadius: 24,
-            }}
-          />
-          <View style={{ gap: 4, flex: 1 }}>
-            <Link href={`/${segment}/${item.user.user}`}>
-              <Text style={{ fontWeight: "bold", fontSize: 16 }}>
-                @{item.user.user}
-              </Text>
-            </Link>
+        {({ hovered, pressed }) => (
+          <View
+            style={[
+              {
+                flexDirection: "row",
+                padding: 16,
+                gap: 16,
+                borderBottomColor: "#ccc",
+                borderBottomWidth: 1,
+                transitionDuration: "200ms",
+              },
+              hovered && {
+                backgroundColor: "red",
+              },
+              pressed && {
+                backgroundColor: "blue",
+              },
+            ]}
+          >
+            <Image
+              source={{ uri: item.user.image }}
+              style={{
+                width: 48,
+                height: 48,
+                borderRadius: 24,
+              }}
+            />
+            <View style={{ gap: 4, flex: 1 }}>
+              <Link href={`/${segment}/${item.user.user}`} asChild>
+                <Pressable>
+                  {({ hovered }) => (
+                    <Text
+                      style={[
+                        { fontWeight: "bold", fontSize: 16 },
+                        hovered && { textDecorationLine: "underline" },
+                      ]}
+                    >
+                      @{item.user.user}
+                    </Text>
+                  )}
+                </Pressable>
+              </Link>
 
-            <Text>{item.post}</Text>
+              <Text>{item.post}</Text>
+            </View>
           </View>
-        </View>
+        )}
       </Pressable>
     </Link>
   );

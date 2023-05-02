@@ -1,4 +1,4 @@
-import { FlatList } from "react-native-gesture-handler";
+import { FlatList } from "react-native";
 
 import { Post } from "../data";
 import { Tweet } from "./tweet";
