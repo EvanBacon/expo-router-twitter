@@ -6,7 +6,7 @@
       "bundler": "metro",
       "output": "static"
     },
-    "name": "twitter",
+    "name": "Expo Twitter",
     "slug": "twitter",
     "experiments": {
       "tsconfigPaths": true

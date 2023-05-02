@@ -1,0 +1,24 @@
+{
+    "applinks": {
+      "apps": [],
+      "details": [
+        {
+          "appID": "QQ57RJ5UTD.com.evanbacon.twitter",
+          "paths": [
+            "*"
+          ]
+        }
+      ]
+    },
+    "activitycontinuation": {
+      "apps": [
+        "QQ57RJ5UTD.com.evanbacon.twitter"
+      ]
+    },
+    "webcredentials": {
+      "apps": [
+        "QQ57RJ5UTD.com.evanbacon.twitter"
+      ]
+    }
+  }
+  

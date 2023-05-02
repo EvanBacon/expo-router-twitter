@@ -25,7 +25,7 @@ export default function RootLayout() {
           content="A Twitter clone built with Expo Router"
         />
         <meta property="og:image" content="/og-image.jpg" />
-        <meta name="expo:handoff" content="true" />
+        <meta property="expo:handoff" content="true" />
       </Head>
 
       <Tabs
