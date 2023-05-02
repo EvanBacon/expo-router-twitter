@@ -3,18 +3,12 @@ import React from "react";
 const icons = require.context("../assets/icons");
 
 export type IconName =
-  | "logo"
-  | "logo-small"
-  | "more"
   | "profile-active"
   | "profile"
   | "explore-active"
   | "explore"
   | "home-active"
-  | "home"
-  | "messages-active"
-  | "messages"
-  | "notifications";
+  | "home";
 
 export function Icon({
   name,
