@@ -21,7 +21,11 @@ export default function RootLayout() {
       <Head>
         <title>Expo Twitter</title>
         <meta
-          name="og:description"
+          name="description"
+          content="A Twitter clone built with Expo Router"
+        />
+        <meta
+          property="og:description"
           content="A Twitter clone built with Expo Router"
         />
         <meta property="og:image" content="/og-image.jpg" />

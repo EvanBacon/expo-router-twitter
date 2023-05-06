@@ -30,8 +30,9 @@ export function ProfileScreen({ profile }: { profile: string }) {
     <>
       <Head>
         <title>{user.name} | Profile | Expo Twitter</title>
-        <meta name="og:description" content={user.bio} />
-        <meta name="og:image" content={user.image} />
+        <meta name="description" content={user.bio} />
+        <meta property="og:description" content={user.bio} />
+        <meta property="og:image" content={user.image} />
       </Head>
       <Stack.Screen options={{ title: "Profile" }} />
 

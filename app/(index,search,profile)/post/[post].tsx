@@ -27,8 +27,9 @@ export default function Post() {
     <>
       <Head>
         <title>{post.user.name} | Post | Expo Twitter</title>
-        <meta name="og:description" content={post.post} />
-        <meta name="og:image" content={post.user.image} />
+        <meta name="description" content={post.post} />
+        <meta property="og:description" content={post.post} />
+        <meta property="og:image" content={post.user.image} />
       </Head>
       <Stack.Screen options={{ title: "Tweet" }} />
       <ScrollView contentInsetAdjustmentBehavior="automatic">

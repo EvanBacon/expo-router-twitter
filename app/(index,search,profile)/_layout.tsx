@@ -1,4 +1,8 @@
 import { Stack } from "expo-router";
+import Head from "expo-router/head";
+import { Share, TouchableOpacity } from "react-native";
+
+import { Icon } from "../../components/icon";
 
 export default function DynamicLayout({ segment }) {
   // Do dynamic settings using `segment`.
@@ -6,7 +10,32 @@ export default function DynamicLayout({ segment }) {
     <Stack
       screenOptions={{
         headerLargeTitle: true,
+        headerRight(props) {
+          return <ShareButton {...props} />;
+        },
       }}
     />
+  );
+}
+
+// const useLink = () => ({ url: window.location.toString() });
+const useLink = Head.useLink
+  ? Head.useLink
+  : () => ({ url: window.location.toString() });
+
+function ShareButton(props) {
+  const link = useLink?.();
+  const url = link?.url ?? window.location.toString();
+  return (
+    <TouchableOpacity
+      activeOpacity={0.8}
+      onPress={() => {
+        Share.share({
+          url,
+        });
+      }}
+    >
+      <Icon name="share" fill={props.tintColor} width={24} height={24} />
+    </TouchableOpacity>
   );
 }
