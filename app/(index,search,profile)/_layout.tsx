@@ -18,19 +18,23 @@ export default function DynamicLayout({ segment }) {
   );
 }
 
+function safeLocation() {
+  if (typeof window === "undefined") {
+    return "";
+  }
+  return window.location.toString();
+}
+
 // const useLink = () => ({ url: window.location.toString() });
 const useLink = Head.useLink
   ? Head.useLink
   : () => ({
-      url: typeof window === "undefined" ? "" : window.location.toString(),
+      url: safeLocation(),
     });
 
 function ShareButton(props) {
   const link = useLink?.();
-  const url =
-    link?.url ?? typeof window === "undefined"
-      ? ""
-      : window.location.toString();
+  const url = link?.url ?? safeLocation();
   return (
     <TouchableOpacity
       activeOpacity={0.8}
