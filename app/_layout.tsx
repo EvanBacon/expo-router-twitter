@@ -1,5 +1,5 @@
 import { Tabs } from "expo-router";
-import { Icon, IconName } from "../components/icon";
+import { Icon, IconName } from "@/components/icon";
 import Head from "expo-router/head";
 
 function makeIcon(icon: IconName, activeIcon: IconName) {

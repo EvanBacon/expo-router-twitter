@@ -3,10 +3,12 @@ import Head from "expo-router/head";
 import { Text } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 
-import { Tweet } from "../../../components/tweet";
-import { posts } from "../../../data";
+import { Tweet } from "@/components/tweet";
+import { posts } from "@/data";
 
-export async function generateStaticParams() {
+// Run in Node.js environments at build time to generate a list of
+// pages that should be statically generated.
+export function generateStaticParams() {
   return posts.map(({ id }) => ({ post: String(id) }));
 }
 

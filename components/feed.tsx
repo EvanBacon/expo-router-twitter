@@ -1,17 +1,15 @@
 import { FlatList, Platform } from "react-native";
 
-import { Post } from "../data";
+import { Post } from "@/data";
 import { Tweet } from "./tweet";
 import useScrollToTop from "./useScrollToTopWithOffset";
 import { useRef } from "react";
-import { useHeaderHeight } from "react-native-screens/native-stack";
 
 export function Feed({
   data,
   ...props
 }: { data: Post[] } & Partial<FlatList["props"]>) {
   const ref = useRef<FlatList>(null);
-  // const headerHeight = useHeaderHeight();
   useScrollToTop(
     ref,
     Platform.select({

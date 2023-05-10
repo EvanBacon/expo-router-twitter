@@ -1,7 +1,7 @@
 import { Stack, useLocalSearchParams, useRouter } from "expo-router";
 
-import { Feed } from "../../components/feed";
-import { posts } from "../../data";
+import { Feed } from "@/components/feed";
+import { posts } from "@/data";
 
 export default function Search() {
   const router = useRouter();

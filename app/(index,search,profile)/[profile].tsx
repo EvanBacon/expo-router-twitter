@@ -3,10 +3,12 @@ import Head from "expo-router/head";
 import { Image, Text, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 
-import { Feed } from "../../components/feed";
-import { posts, users } from "../../data";
+import { Feed } from "@/components/feed";
+import { posts, users } from "@/data";
 
-export async function generateStaticParams() {
+// Run in Node.js environments at build time to generate a list of
+// pages that should be statically generated.
+export function generateStaticParams() {
   return users.map(({ user }) => ({ profile: user }));
 }
 

@@ -1,7 +1,7 @@
 import { Link, useRouter, useSegments } from "expo-router";
 import { Image, Pressable, Text, View } from "react-native";
 
-import { Post } from "../data";
+import { Post } from "@/data";
 
 type Group<T extends string> = `(${T})`;
 
