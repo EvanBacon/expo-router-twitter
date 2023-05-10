@@ -21,11 +21,16 @@ export default function DynamicLayout({ segment }) {
 // const useLink = () => ({ url: window.location.toString() });
 const useLink = Head.useLink
   ? Head.useLink
-  : () => ({ url: window.location.toString() });
+  : () => ({
+      url: typeof window === "undefined" ? "" : window.location.toString(),
+    });
 
 function ShareButton(props) {
   const link = useLink?.();
-  const url = link?.url ?? window.location.toString();
+  const url =
+    link?.url ?? typeof window === "undefined"
+      ? ""
+      : window.location.toString();
   return (
     <TouchableOpacity
       activeOpacity={0.8}

@@ -11,7 +11,7 @@
     "expo": "~48.0.15",
     "expo-constants": "~14.2.1",
     "expo-linking": "~4.0.1",
-    "expo-router": "^1.7.1",
+    "expo-router": "next",
     "expo-splash-screen": "~0.18.2",
     "expo-status-bar": "~1.4.2",
     "react": "18.2.0",
