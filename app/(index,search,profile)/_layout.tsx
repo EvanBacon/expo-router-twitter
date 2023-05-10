@@ -1,17 +1,20 @@
 import { Stack } from "expo-router";
 import Head from "expo-router/head";
-import { Share, TouchableOpacity } from "react-native";
-
+import { Platform, TouchableOpacity } from "react-native";
+import * as Share from "expo-sharing";
 import { Icon } from "../../components/icon";
 
-export default function DynamicLayout({ segment }) {
-  // Do dynamic settings using `segment`.
+export default function DynamicLayout() {
   return (
     <Stack
       screenOptions={{
         headerLargeTitle: true,
         headerRight(props) {
-          return <ShareButton {...props} />;
+          if (isSharingAvailable()) {
+            return <ShareButton {...props} />;
+          } else {
+            return null;
+          }
         },
       }}
     />
@@ -25,7 +28,6 @@ function safeLocation() {
   return window.location.toString();
 }
 
-// const useLink = () => ({ url: window.location.toString() });
 const useLink = Head.useLink
   ? Head.useLink
   : () => ({
@@ -47,4 +49,15 @@ function ShareButton(props) {
       <Icon name="share" fill={props.tintColor} width={24} height={24} />
     </TouchableOpacity>
   );
+}
+
+function isSharingAvailable() {
+  if (Platform.OS === "web") {
+    if (typeof navigator === "undefined") {
+      return false;
+    }
+
+    return !!navigator.share;
+  }
+  return true;
 }

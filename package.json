@@ -12,6 +12,7 @@
     "expo-constants": "~14.3.0",
     "expo-linking": "~4.1.0",
     "expo-router": "next",
+    "expo-sharing": "~11.4.0",
     "expo-splash-screen": "~0.19.0",
     "expo-status-bar": "~1.5.0",
     "react": "18.2.0",
@@ -23,6 +24,7 @@
     "react-native-screens": "~3.20.0",
     "react-native-svg": "13.4.0",
     "react-native-web": "~0.18.7",
+    "sass": "^1.62.1",
     "typescript": "^4.9.4"
   },
   "devDependencies": {
