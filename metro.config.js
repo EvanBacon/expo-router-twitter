@@ -1,8 +1,6 @@
 const { getDefaultConfig } = require("expo/metro-config");
 
-const config = getDefaultConfig(__dirname, {
-  isCSSEnabled: true,
-});
+const config = getDefaultConfig(__dirname);
 
 config.resolver.sourceExts.push("svg");
 
@@ -11,7 +9,7 @@ config.resolver.assetExts = config.resolver.assetExts.filter(
 );
 
 config.transformer.babelTransformerPath = require.resolve(
-  "./metro.transformer.js"
+  "react-native-svg-transformer"
 );
 
 module.exports = config;

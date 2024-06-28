@@ -9,7 +9,8 @@
     "name": "Expo Twitter",
     "slug": "twitter",
     "experiments": {
-      "tsconfigPaths": true
+      "tsconfigPaths": true,
+      "typedRoutes": true
     },
     "plugins": [
       [
