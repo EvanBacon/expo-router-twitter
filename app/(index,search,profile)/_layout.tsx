@@ -4,6 +4,16 @@ import { Platform, TouchableOpacity } from "react-native";
 import * as Share from "expo-sharing";
 import { Icon } from "@/components/icon";
 
+export const unstable_settings = {
+  initialRouteName: "index",
+  search: {
+    initialRouteName: "search",
+  },
+  profile: {
+    initialRouteName: "profile",
+  },
+};
+
 export default function DynamicLayout() {
   return (
     <Stack
