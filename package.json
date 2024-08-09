@@ -10,7 +10,7 @@
     "expo": "~51.0.24",
     "expo-constants": "~16.0.2",
     "expo-linking": "~6.3.1",
-    "expo-router": "~3.5.20",
+    "expo-router": "file:/Users/saulamsal/Files/www/expo/packages/expo-router",
     "expo-sharing": "~12.0.1",
     "expo-splash-screen": "~0.27.5",
     "expo-status-bar": "~1.12.1",
