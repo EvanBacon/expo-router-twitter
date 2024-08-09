@@ -67,6 +67,12 @@ export default function RootLayout() {
               tabBarIcon: makeIcon("profile", "profile-active"),
             }}
           />
+          <Tabs.Screen
+            name="(brand)"
+            options={{
+              href: null,
+            }}
+          />
         </Tabs>
       </GestureHandlerRootView>
     </>

@@ -3,6 +3,7 @@ import Head from "expo-router/head";
 import { Platform, TouchableOpacity } from "react-native";
 import * as Share from "expo-sharing";
 import { Icon } from "@/components/icon";
+import { useRouter } from "expo-router";
 
 
 
@@ -53,13 +54,12 @@ const useLink = Head.useLink
 function ShareButton(props) {
   const link = useLink?.();
   const url = link?.url ?? safeLocation();
+  const router = useRouter();
   return (
     <TouchableOpacity
       activeOpacity={0.8}
       onPress={() => {
-        Share.share({
-          url,
-        });
+        router.push("/(brand)/about");
       }}
     >
       <Icon name="share" fill={props.tintColor} width={24} height={24} />
