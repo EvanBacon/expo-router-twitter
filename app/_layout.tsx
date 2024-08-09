@@ -1,4 +1,4 @@
-import { Tabs } from "expo-router";
+import { Tabs, useLink } from "expo-router";
 import { Icon, IconName } from "@/components/icon";
 import Head from "expo-router/head";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
@@ -69,6 +69,12 @@ export default function RootLayout() {
           />
           <Tabs.Screen
             name="(brand)"
+            options={{
+              href: null,
+            }}
+          />
+          <Tabs.Screen
+            name="about"
             options={{
               href: null,
             }}

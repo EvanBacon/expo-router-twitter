@@ -1,65 +1,37 @@
-import { Stack } from "expo-router";
-import Head from "expo-router/head";
+import { Stack, useRouter } from "expo-router";
 import { Platform, TouchableOpacity } from "react-native";
-import * as Share from "expo-sharing";
 import { Icon } from "@/components/icon";
-import { useRouter } from "expo-router";
-
-
-
-
 
 export const unstable_settings = {
-  initialRouteName: "index",
-  search: {
-    initialRouteName: "search",
+  index: {
+    initialRouteName: "index",
   },
   profile: {
     initialRouteName: "profile",
   },
+  search: {
+    initialRouteName: "search",
+  },
 };
-
-
 
 export default function DynamicLayout() {
   return (
     <Stack
       screenOptions={{
         headerLargeTitle: true,
-        headerRight(props) {
-          if (isSharingAvailable()) {
-            return <ShareButton {...props} />;
-          } else {
-            return null;
-          }
-        },
+        headerRight: (props) => <ShareButton {...props} />,
       }}
     />
   );
 }
 
-function safeLocation() {
-  if (typeof window === "undefined") {
-    return "";
-  }
-  return window.location.toString();
-}
-
-const useLink = Head.useLink
-  ? Head.useLink
-  : () => ({
-      url: safeLocation(),
-    });
-
 function ShareButton(props) {
-  const link = useLink?.();
-  const url = link?.url ?? safeLocation();
   const router = useRouter();
   return (
     <TouchableOpacity
       activeOpacity={0.8}
       onPress={() => {
-        router.push("/(brand)/about");
+        router.push("/about");
       }}
     >
       <Icon name="share" fill={props.tintColor} width={24} height={24} />

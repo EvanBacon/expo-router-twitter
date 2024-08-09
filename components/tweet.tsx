@@ -44,7 +44,7 @@ export function Tweet({ item }: { item: Post }) {
             }}
           />
           <View style={{ gap: 4, flex: 1, alignItems: "flex-start" }}>
-            <Link href={`/${segment}/${item.user.user}`} asChild>
+            <Link href={`/${segment}/u/${item.user.user}`} asChild>
               <Pressable style={{ alignItems: "flex-start" }}>
                 {({ hovered }) => (
                   <Text
