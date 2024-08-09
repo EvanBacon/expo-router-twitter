@@ -1,5 +1,5 @@
 import { Link, useRouter, useSegments } from "expo-router";
-import { Image, Pressable, Text, View } from "react-native";
+import { Image, Pressable, Text, View, Button } from "react-native"; 
 
 import { Post } from "@/data";
 
@@ -60,6 +60,7 @@ export function Tweet({ item }: { item: Post }) {
             </Link>
 
             <Text selectable>{item.post}</Text>
+            <Button onPress={() => router.push("/about")} title="Modal" />
           </View>
         </View>
       )}
