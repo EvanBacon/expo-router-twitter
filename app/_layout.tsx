@@ -47,21 +47,21 @@ export default function RootLayout() {
           }}
         >
           <Tabs.Screen
-            name="/index"
+            name="(index)"
             options={{
               title: "Home",
               tabBarIcon: makeIcon("home", "home-active"),
             }}
           />
           <Tabs.Screen
-            name="/search"
+            name="(search)"
             options={{
               title: "Search",
               tabBarIcon: makeIcon("explore", "explore-active"),
             }}
           />
           <Tabs.Screen
-            name="/profile"
+            name="(profile)"
             options={{
               title: "Profile",
               tabBarIcon: makeIcon("profile", "profile-active"),

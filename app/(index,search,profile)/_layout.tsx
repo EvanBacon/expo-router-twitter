@@ -9,17 +9,14 @@ import { Icon } from "@/components/icon";
 
 
 export const unstable_settings = {
-  index: {
-    initialRouteName: "index",
+  initialRouteName: "index",
+  search: {
+    initialRouteName: "search",
   },
   profile: {
     initialRouteName: "profile",
   },
-  search: {
-    initialRouteName: "search",
-  },
 };
-
 
 
 
