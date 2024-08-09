@@ -2,17 +2,6 @@ import { Tabs, useRouter } from "expo-router";
 import { Platform, TouchableOpacity } from "react-native";
 import { Icon, IconName } from "@/components/icon";
 
-export const unstable_settings = {
-  index: {
-    initialRouteName: "(tabs)/index",
-  },
-  profile: {
-    initialRouteName: "(tabs)/profile",
-  },
-  search: {
-    initialRouteName: "(tabs)/search",
-  },
-};
 
 function makeIcon(icon: IconName, activeIcon: IconName) {
   return function (props: { size: number; color: string; focused: boolean }) {
@@ -31,7 +20,7 @@ export default function TabsLayout() {
   return (
     <Tabs
       screenOptions={{
-        headerShown: false,
+        headerShown: true,
         tabBarShowLabel: false,
         tabBarActiveTintColor: "rgb(29, 155, 240)",
         headerLargeTitle: true,
@@ -39,21 +28,21 @@ export default function TabsLayout() {
       }}
     >
       <Tabs.Screen
-        name="(index)"
+        name="index"
         options={{
           title: "Home",
           tabBarIcon: makeIcon("home", "home-active"),
         }}
       />
       <Tabs.Screen
-        name="(search)"
+        name="search"
         options={{
           title: "Search",
           tabBarIcon: makeIcon("explore", "explore-active"),
         }}
       />
       <Tabs.Screen
-        name="(profile)"
+        name="profile"
         options={{
           title: "Profile",
           tabBarIcon: makeIcon("profile", "profile-active"),
